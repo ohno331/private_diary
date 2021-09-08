@@ -1,3 +1,5 @@
 django==2.2.2
 
 pylint_django
+
+# --setting=config.setting_dev
