@@ -46,11 +46,11 @@ class DiaryListView(LoginRequiredMixin, generic.ListView):
     paginate_by = 2
 
     def get_queryset(self):
-        diaries = Diary.objects.filter(user=self.request.user).order_by('-create_at')
+        diaries = Diary.objects.filter(user=self.request.user).order_by('-created_at')
         return diaries
 
 
 class DiaryDetailView(LoginRequiredMixin, generic.DetailView):
     model = Diary 
     template_name = 'diary_detail.html'
-    pk_url_kwarg = 'id'
+    pk_url_kwarg = 'pk'
